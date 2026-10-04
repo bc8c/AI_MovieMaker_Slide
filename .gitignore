@@ -1,0 +1,8 @@
+# Keep original large media and local review artifacts out of the GitHub repository.
+# docs/ contains the complete optimized site and must remain tracked.
+/assets/img/
+/assets/video/
+/audit/
+/backup/
+__pycache__/
+*.pyc

@@ -1,0 +1,362 @@
+/* 최종 화면 검증에서 확인한 간격과 미디어 영역 보정 */
+.cover .film-strip {
+  top: 108px;
+  width: 632px;
+  gap: 18px;
+  align-items: flex-start;
+}
+.cover .film-strip .media-slot {
+  flex: 0 0 198px;
+  width: 198px;
+  height: 352px;
+  border: 6px solid #fff;
+  border-radius: 18px;
+  background: #d5e4df;
+  box-shadow:
+    0 18px 36px #163a3029,
+    0 0 0 1px #bfd2c6;
+}
+.cover .film-strip .media-slot:nth-child(1) {
+  transform: translateY(20px) rotate(-6deg);
+}
+.cover .film-strip .media-slot:nth-child(2) {
+  transform: translateY(64px);
+}
+.cover .film-strip .media-slot:nth-child(3) {
+  transform: translateY(108px) rotate(6deg);
+}
+.cover .film-strip .media-slot.has-media::before {
+  content: "";
+  position: absolute;
+  inset: 58% 0 0;
+  background: linear-gradient(transparent, #102d35b3);
+  pointer-events: none;
+  z-index: 1;
+}
+.cover .film-strip .media-slot.has-media::after {
+  position: absolute;
+  bottom: 18px;
+  left: 16px;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  z-index: 2;
+}
+.cover .film-strip .media-slot:nth-child(1).has-media::after {
+  content: "SCENE 01";
+}
+.cover .film-strip .media-slot:nth-child(2).has-media::after {
+  content: "SCENE 02";
+}
+.cover .film-strip .media-slot:nth-child(3).has-media::after {
+  content: "SCENE 03";
+}
+.content {
+  height: 550px;
+}
+.slide[data-index="24"] .content {
+  height: 560px;
+}
+.slide[data-index="24"] .actor .media-slot {
+  width: 84px;
+  height: 149.33px;
+}
+.slide[data-index="24"] .three .media-slot {
+  width: 80px;
+  height: 142.22px;
+}
+.slide[data-index="33"] .content {
+  height: 560px;
+}
+.video-instruction-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 420px;
+  gap: 30px;
+  align-items: center;
+}
+.video-instruction-layout > .media-slot {
+  height: 300px;
+  width: 420px;
+}
+.video-instruction-layout .scene-grid {
+  gap: 16px;
+}
+.video-instruction-layout .scene {
+  padding: 20px;
+}
+.video-instruction-layout .camera-visual {
+  height: 128px;
+  margin-bottom: 14px;
+}
+.video-instruction-layout .scene small {
+  margin-top: 10px;
+}
+.video-instruction-layout .scene h3 {
+  margin: 8px 0;
+  font-size: 27px;
+}
+.video-instruction-layout .scene p {
+  font-size: 24px;
+}
+.slide[data-index="31"] .video-instruction-layout .scene {
+  min-height: 300px;
+}
+.video-instruction-layout .transform {
+  font-size: 22px;
+  margin-top: 24px;
+}
+.video-instruction-layout > .media-slot .slot-label {
+  font-size: 23px;
+}
+.edit-timeline.has-media {
+  padding: 0;
+  height: 102px;
+  overflow: hidden;
+}
+[data-media-id].has-media > img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+.media-slot.has-media > img {
+  object-fit: cover;
+}
+.media-slot[data-media-type="ui"].has-media > img {
+  object-fit: contain;
+}
+.slide[data-index="32"] .timeline > div {
+  padding: 14px 18px;
+}
+.slide[data-index="32"] .edit-timeline {
+  margin-top: 18px;
+  padding: 14px 22px;
+}
+.slide[data-index="32"] .roadmap.short {
+  margin-top: 16px;
+}
+.slide[data-index="32"] .rule {
+  margin-top: 16px;
+}
+.media-slot.has-media {
+  position: relative;
+}
+.media-slot.has-media > video {
+  object-fit: contain;
+  background: #13271f;
+}
+.video-expand,
+.clip-preview {
+  position: absolute;
+  z-index: 4;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #ffffff70;
+  border-radius: 8px;
+  background: #173c30e8;
+  color: white;
+  font:
+    600 22px Pretendard,
+    sans-serif;
+  cursor: pointer;
+  box-shadow: 0 3px 12px #13271f26;
+}
+.video-expand:hover,
+.clip-preview:hover {
+  background: #24674f;
+}
+.video-instruction-layout.has-scene-videos {
+  display: block;
+  width: 100%;
+}
+.generation-guide {
+  flex-shrink: 0;
+  margin-bottom: 18px;
+  padding: 13px 24px;
+  border-left: 4px solid var(--stage);
+  border-radius: 0 10px 10px 0;
+  background: var(--stage-soft);
+  color: var(--ink);
+  font-size: 26px;
+  line-height: 1.4;
+}
+.generation-guide strong { color: var(--stage); font-weight: 700; }
+.video-instruction-layout.has-scene-videos .camera-visual.with-video {
+  width: 100%;
+  height: auto;
+  background: transparent;
+  margin: 0 0 10px;
+}
+.video-instruction-layout.has-scene-videos .camera-visual .media-slot {
+  width: 132px;
+  height: 234.67px;
+  margin: 0 auto;
+}
+.slide[data-index="31"] .has-scene-videos .scene {
+  min-height: 0;
+  padding: 16px;
+}
+.has-scene-videos .scene small {
+  margin-top: 10px;
+  font-size: 18px;
+}
+.has-scene-videos .scene h3 {
+  margin: 6px 0;
+  font-size: 26px;
+}
+.has-scene-videos .scene p {
+  margin: 6px 0 0;
+  font-size: 22px;
+}
+.has-scene-videos .transform {
+  margin-top: 18px;
+  gap: 10px;
+  font-size: 20px;
+}
+.has-scene-videos .good {
+  padding: 10px 18px;
+}
+.timeline > div {
+  position: relative;
+}
+.timeline > div.extra-scene {
+  width: 230px;
+  border-style: dashed;
+  background: #f2f6f1;
+}
+.timeline > div.extra-scene small {
+  font-size: 18px;
+}
+.timeline .clip-preview {
+  top: 12px;
+  right: 12px;
+}
+.whale .media-slot {
+  width: 180px;
+  height: 320px;
+}
+.media-dialog {
+  width: 1220px;
+  height: 780px;
+  max-width: none;
+  max-height: none;
+  padding: 0;
+  border: 1px solid #aac3b5;
+  border-radius: 18px;
+  background: #f4f8f4;
+  color: var(--ink);
+  box-shadow: 0 20px 100px #0005;
+}
+.media-dialog::backdrop {
+  background: #102b23c9;
+}
+.media-dialog header {
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 28px;
+  color: white;
+  background: #203730;
+  font-size: 27px;
+}
+.media-dialog header button {
+  padding: 10px 18px;
+  border: 0;
+  border-radius: 8px;
+  background: white;
+  color: #203730;
+  font:
+    600 18px Pretendard,
+    sans-serif;
+  cursor: pointer;
+}
+.media-dialog-body {
+  height: 704px;
+  padding: 24px 48px;
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 65px;
+  align-items: center;
+}
+.media-dialog-body video {
+  width: 369px;
+  height: 656px;
+  display: block;
+  background: #13271f;
+  border-radius: 12px;
+  object-fit: contain;
+  justify-self: center;
+}
+.media-dialog-duration {
+  color: var(--deep);
+  font-size: 34px;
+  font-weight: 700;
+}
+.media-dialog-copy p {
+  font-size: 29px;
+  margin-top: 24px;
+  line-height: 1.45;
+}
+.media-dialog-copy small {
+  font-size: 22px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+@media print {
+  .content {
+    height: 575px;
+  }
+  .slide[data-index="24"] .content,
+  .slide[data-index="33"] .content {
+    height: 560px;
+  }
+  .prompt-wrap {
+    height: 590px;
+  }
+  .media-dialog,
+  .video-expand,
+  .clip-preview {
+    display: none !important;
+  }
+}
+.actual-prompt-links {
+  position: absolute;
+  top: 36px;
+  right: 220px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 5;
+}
+.actual-prompt-links span { font-size: 18px; color: var(--muted); margin-right: 4px; }
+.actual-prompt-links button {
+  border: 1px solid #526276;
+  border-radius: 10px;
+  padding: 9px 15px;
+  background: #192b3d;
+  color: #ecf6ff;
+  font-weight: 600;
+  line-height: 1.25;
+  font-family: inherit;
+  font-size: 18px;
+  cursor: pointer;
+}
+.actual-prompt-links button:hover { background: #30485d; border-color: #92c4e7; }
+.actual-prompt-links button:focus-visible { outline: 3px solid #f9d36d; outline-offset: 3px; }
+.actual-prompt-meta { padding: 12px 26px; background: #192b3d; color: #b9c8d8; font-size: 16px; }
+.actual-prompt-dialog pre { height: calc(100% - 124px); white-space: pre-wrap; overflow-wrap: anywhere; }
+@media print { .actual-prompt-links, .actual-prompt-dialog { display: none !important; } }
+.slide[data-index="23"] .instruction-layout { grid-template-columns: 440px minmax(0, 1fr); gap: 24px; }
+.slide[data-index="23"] .instruction-layout > .media-slot { width: 100%; height: 340px; background: #101112; }
+.slide[data-index="23"] .instruction-layout > .media-slot img { object-fit: contain; }
+.reference-screen-expand { position: absolute; right: 12px; bottom: 12px; padding: 10px 16px; border: 1px solid #ffffff80; border-radius: 8px; background: #203730; color: white; font: 600 18px Pretendard, sans-serif; cursor: pointer; }
+.reference-screen-dialog { width: 1480px; height: 780px; background: #101112; }
+.reference-screen-dialog > img { display: block; width: 100%; height: calc(100% - 78px); object-fit: contain; }
+@media print { .reference-screen-dialog, .reference-screen-expand { display: none !important; } }
